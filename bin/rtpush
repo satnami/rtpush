@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'rtpush'
+
+RTPush.initialize(ARGV[0].split(','), ARGV[1])

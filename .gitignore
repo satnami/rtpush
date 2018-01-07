@@ -29,7 +29,7 @@ tmp
 .log/
 .bundle/
 .ruby-gemset
-bin/
 tmp/
 rtpush-*.gem
 Gemfile.lock
+.env
