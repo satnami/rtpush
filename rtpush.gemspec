@@ -2,7 +2,7 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name          = 'rtpush'
-  s.version       = '0.0.2'
+  s.version       = '0.0.3'
   s.authors       = ['Mhd Sami AlMouhtaseb']
   s.email         = 'mssatnami@gmail.com'
 
@@ -11,8 +11,9 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://github.com/satnami/rtpush'
   s.license       = 'MIT'
 
-  s.files         = `git ls-files -- lib README.md CHANGELOG.md LICENSE`.split("\n")
+  s.files         = `git ls-files -- lib bin README.md CHANGELOG.md LICENSE`.split("\n")
   s.test_files    = `git ls-files -- {spec}`.split("\n")
+  s.executables   = %w[rtpush]
   s.require_paths = %w[lib spec]
 
   s.add_dependency 'dotenv', '~> 2.2', '>= 2.2.1'
