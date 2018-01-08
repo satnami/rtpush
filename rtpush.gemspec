@@ -2,7 +2,7 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name          = 'rtpush'
-  s.version       = '0.0.3'
+  s.version       = '0.0.4'
   s.authors       = ['Mhd Sami AlMouhtaseb']
   s.email         = 'mssatnami@gmail.com'
 
@@ -15,6 +15,8 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {spec}`.split("\n")
   s.executables   = %w[rtpush]
   s.require_paths = %w[lib spec]
+
+  s.required_ruby_version = '~> 2.2'
 
   s.add_dependency 'dotenv', '~> 2.2', '>= 2.2.1'
   s.add_dependency 'fcm', '~> 0.0.2', '>= 0.0.2'
