@@ -1,12 +1,22 @@
-# rtpush [![Gem Version](https://badge.fury.io/rb/rtpush.svg)](https://badge.fury.io/rb/rtpush) [![Maintainability](https://api.codeclimate.com/v1/badges/687aec30cf02fad5b6eb/maintainability)](https://codeclimate.com/github/satnami/rtpush/maintainability)
+[![Gem Version](https://badge.fury.io/rb/rtpush.svg)](https://badge.fury.io/rb/rtpush) [![Maintainability](https://api.codeclimate.com/v1/badges/687aec30cf02fad5b6eb/maintainability)](https://codeclimate.com/github/satnami/rtpush/maintainability)
+
+# RTPush. The terminal push notification service for Ruby.
 
 ## Installation
 ```
 $ gem install rtpush
 ```
 
-## Prerequisites
-make sure you have export variables those in your env
+## Configuring
+You can use [dotenv](https://github.com/bkeepers/dotenv), which is included in the Gemfile,
+to fill in any values that you can't or won't supply through the environment.
+
+In order of precedence RTPush uses:
+1. Environment variables (for example MY_VALUE=abc)
+2. Values provided in a .env file
+3. Default values from .env.default
+
+## Configuration Parameters
 ```
 NOTIFICATION_TITLE=XX
 
