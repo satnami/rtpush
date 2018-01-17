@@ -33,3 +33,4 @@ tmp/
 rtpush-*.gem
 Gemfile.lock
 .env
+.ruby-version
