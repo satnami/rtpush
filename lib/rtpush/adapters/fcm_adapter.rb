@@ -1,5 +1,5 @@
 module RTPush
-  class FcmService
+  class FcmAdapter < RTPush::BaseAdapter
     class << self
       def push(message)
         registration_ids = [ENV['GCM_ANDROID_DEVICE_TOKEN']]
@@ -16,8 +16,8 @@ module RTPush
           }.reject { |_k, v| v.nil? || v.empty? }
         }.reject { |_k, v| v.nil? || v.empty? }
         client.send(registration_ids, options)
-      rescue StandardError => _
-        nil
+      rescue StandardError => e
+        raise Error::AdapterError, e.message
       end
 
       private

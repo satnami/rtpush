@@ -1,8 +1,11 @@
-Dir[File.join(__dir__, '/initializers/*.rb')].each { |file| require file }
-Dir[File.join(__dir__, '/services/*.rb')].each { |file| require file }
+Dir[File.join(__dir__, '/rtpush/*.rb')].each { |file| require file }
+Dir[File.join(__dir__, '/rtpush/initializers/*.rb')].each { |file| require file }
+Dir[File.join(__dir__, '/rtpush/adapters/*.rb')].each { |file| require file }
 
 module RTPush
   def self.initialize(options, message)
+    raise ArgumentError, 'Missing Message param' if message.to_s.empty?
+    raise ArgumentError, 'Missing Arguments params' if options.empty?
     push(strategies(options), message)
   end
 
@@ -19,15 +22,15 @@ module RTPush
     options.each do |option|
       case option
       when 'sms'
-        strategies << RTPush::TwilioService
+        strategies << RTPush::TwilioAdapter
       when 'mobile'
-        strategies << RTPush::FcmService
+        strategies << RTPush::FcmAdapter
       when 'insta'
-        strategies << RTPush::InstapushService
+        strategies << RTPush::InstapushAdapter
       when 'slack'
-        strategies << RTPush::SlackService
+        strategies << RTPush::SlackAdapter
       else
-        #
+        raise NotImplementedStrategyError, "Unknown strategy #{option}"
       end
     end
     strategies

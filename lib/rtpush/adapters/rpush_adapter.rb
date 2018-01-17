@@ -1,11 +1,11 @@
 module RTPush
-  class RpushService
+  class RpushAdapter < RTPush::BaseAdapter
     class << self
       def push(message)
         gcm_push(message)
         apn_push(message)
-      rescue StandardError => _
-        nil
+      rescue StandardError => e
+        raise Error::AdapterError, e.message
       end
 
       private

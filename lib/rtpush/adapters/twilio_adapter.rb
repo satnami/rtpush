@@ -1,5 +1,5 @@
 module RTPush
-  class TwilioService
+  class TwilioAdapter < RTPush::BaseAdapter
     class << self
       def push(message)
         client.messages.create(
@@ -7,8 +7,8 @@ module RTPush
           to: ENV['TWILIO_TO_NUMBER'],
           body: message
         )
-      rescue StandardError => _
-        nil
+      rescue StandardError => e
+        raise Error::AdapterError, e.message
       end
 
       private

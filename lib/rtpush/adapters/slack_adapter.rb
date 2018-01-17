@@ -1,11 +1,11 @@
 module RTPush
-  class SlackService
+  class SlackAdapter < RTPush::BaseAdapter
     class << self
       def push(message)
         data = %(*#{ENV['NOTIFICATION_TITLE']}*\n`#{message}`)
         client.ping(data)
-      rescue StandardError => _
-        nil
+      rescue StandardError => e
+        raise Error::AdapterError, e.message
       end
 
       private
