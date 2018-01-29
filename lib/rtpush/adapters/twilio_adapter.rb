@@ -8,7 +8,7 @@ module RTPush
           body: message
         )
       rescue StandardError => e
-        raise Error::AdapterError, e.message
+        raise Errors::AdapterError, e.message
       end
 
       private

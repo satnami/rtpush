@@ -6,7 +6,7 @@ module RTPush
         event.tracker = { message: message, version: '0.9.0' }
         client.push event
       rescue StandardError => e
-        raise Error::AdapterError, e.message
+        raise Errors::AdapterError, e.message
       end
 
       private

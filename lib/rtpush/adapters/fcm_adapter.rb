@@ -17,7 +17,7 @@ module RTPush
         }.reject { |_k, v| v.nil? || v.empty? }
         client.send(registration_ids, options)
       rescue StandardError => e
-        raise Error::AdapterError, e.message
+        raise Errors::AdapterError, e.message
       end
 
       private

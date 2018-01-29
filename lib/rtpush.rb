@@ -30,7 +30,7 @@ module RTPush
       when 'slack'
         strategies << RTPush::SlackAdapter
       else
-        raise NotImplementedStrategyError, "Unknown strategy #{option}"
+        raise Errors::NotImplementedStrategyError, "Unknown strategy #{option}"
       end
     end
     strategies

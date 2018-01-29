@@ -5,7 +5,7 @@ module RTPush
         data = %(*#{ENV['NOTIFICATION_TITLE']}*\n`#{message}`)
         client.ping(data)
       rescue StandardError => e
-        raise Error::AdapterError, e.message
+        raise Errors::AdapterError, e.message
       end
 
       private

@@ -5,7 +5,7 @@ module RTPush
         gcm_push(message)
         apn_push(message)
       rescue StandardError => e
-        raise Error::AdapterError, e.message
+        raise Errors::AdapterError, e.message
       end
 
       private
