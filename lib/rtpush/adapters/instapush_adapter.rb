@@ -1,12 +1,12 @@
 module RTPush
-  class InstapushService
+  class InstapushAdapter < RTPush::BaseAdapter
     class << self
       def push(message)
         event = Instapush::Event.new ENV['INSTAPUSH_APP_EVENT']
         event.tracker = { message: message, version: '0.9.0' }
         client.push event
-      rescue StandardError => _
-        nil
+      rescue StandardError => e
+        raise Errors::AdapterError, e.message
       end
 
       private
