@@ -28,5 +28,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'slack-notifier', '~> 2.3', '>= 2.3.1'
   s.add_dependency 'twilio-ruby', '~> 5.6', '>= 5.6.0'
 
-  s.add_development_dependency 'rspec', '~> 0'
+  s.add_development_dependency 'rspec', '~> 3'
 end
