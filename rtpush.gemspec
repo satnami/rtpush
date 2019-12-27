@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'instapush-api', '~>0.1', '>=0.1.0'
   s.add_dependency 'redis', '~> 4.0', '>= 4.0.1'
   s.add_dependency 'rpush', '~> 3.0', '>= 3.0.1'
-  s.add_dependency 'rpush-redis', '~> 0.4', '>= 0.4.1'
+  s.add_dependency 'rpush-redis', '>= 0.4.1', '< 2.0'
   s.add_dependency 'slack-notifier', '~> 2.3', '>= 2.3.1'
   s.add_dependency 'twilio-ruby', '~> 5.6', '>= 5.6.0'
 
