@@ -6,6 +6,7 @@ module RTPush
   def self.initialize(options, message)
     raise ArgumentError, 'Missing Message param' if message.to_s.empty?
     raise ArgumentError, 'Missing Arguments params' if options.empty?
+
     push(strategies(options), message)
   end
 
@@ -21,6 +22,8 @@ module RTPush
     strategies = []
     options.each do |option|
       case option
+      when 'post'
+        strategies << RTPush::HttpAdapter
       when 'sms'
         strategies << RTPush::TwilioAdapter
       when 'mobile'
