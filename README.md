@@ -26,6 +26,8 @@ In order of precedence RTPush uses:
 ```
 NOTIFICATION_TITLE=XX
 
+NOTIFICATION_URL=XX
+
 REDIS_URL=XX
 
 SLACK_WEBHOOK=XX

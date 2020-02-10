@@ -1,3 +1,5 @@
+require_relative './base_adapter'
+
 module RTPush
   class TwilioAdapter < RTPush::BaseAdapter
     class << self

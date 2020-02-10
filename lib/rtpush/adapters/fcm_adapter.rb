@@ -1,3 +1,5 @@
+require_relative './base_adapter'
+
 module RTPush
   class FcmAdapter < RTPush::BaseAdapter
     class << self
