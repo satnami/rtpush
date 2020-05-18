@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '~> 2.2'
 
   s.add_dependency 'dotenv', '~> 2.2', '>= 2.2.1'
-  s.add_dependency 'fcm', '~> 0.0.2', '>= 0.0.2'
+  s.add_dependency 'fcm', '>= 0.0.2', '< 1.1.0'
   s.add_dependency 'instapush-api', '~>0.1', '>=0.1.0'
   s.add_dependency 'redis', '~> 4.0', '>= 4.0.1'
   s.add_dependency 'rpush', '~> 3.0', '>= 3.0.1'
